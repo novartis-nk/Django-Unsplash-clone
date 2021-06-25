@@ -1,0 +1,10 @@
+ @font-face {
+	font-family: 'yekan';
+	src: url('{% static 'fonts/Yekan.eot' %}');
+	src: url('{% static 'fonts/Yekan.eot?#iefix' %}') format('embedded-opentype'),
+		 url('{% static 'fonts/Yekan.woff' %}') format('woff'),
+		 url('{% static 'fonts/Yekan.ttf' %}') format('truetype'),
+		 url('{% static 'fonts/Yekan.svg#BYekan' %}') format('svg');
+	font-weight: normal;
+	font-style: normal
+	}

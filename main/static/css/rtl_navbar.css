@@ -1,0 +1,314 @@
+
+header{
+	z-index: 200;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	width : 100%;
+	height: 75px;
+	background-color: #fcfcfc;
+	direction: rtl;
+}
+
+.navbar{
+	position: relative;
+	width: 100%;
+	max-width: 100%;
+	height: 100%;
+	max-height: 70px;
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #e3e3e3;
+}
+
+.logo{
+	min-width: 260px;
+	height: 100%;
+	max-height: 100%;
+	margin-top: 5px;
+	margin-right: 10px;
+	float: left;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+/* all about top left corner logo part */
+.logo-img{
+	width: 48px;
+	height: 48px;
+	opacity: 0.8;
+	background-position: center;
+	background-repeat: no-repeat;
+	object-fit: scale-down;
+	display: inline-flex;
+ }
+
+.site-info{
+	display: block;	
+	width: fit-content;
+	height: fit-content;
+	float: right;
+	margin-left: 7px;
+}
+
+.site-name{
+	padding-bottom: 2px;
+	font-weight: bold;
+	font-size: 18px;
+	margin: 0px 10px -9px 0px;
+	font-family: yekan;
+	opacity: 0.8;
+}
+.site-des{
+	color: gray;
+	font-weight: 600;
+	font-size: 14px;
+	margin: 0px 10px 0px 0px;
+	font-family: yekan;
+}
+/* end of  top left corner logo part */
+/* start of search container*/
+
+.searchbar{
+	margin: auto;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	max-width: 1800px;
+	min-width: 740px;
+	margin-right: 20PX;
+	position: relative;
+
+} 
+
+.left_side_nav{
+	position: relative;
+	max-width: 100%;
+	height: 100%;
+	max-height: 70px;
+	display: flex;
+}
+
+
+.shoping_card{
+	margin-top: 2px;
+	height: 100%;
+	width: 122px;
+	max-height: 100%;
+	display: flex;
+	align-items: center;
+	position: relative;
+	right: 80px;
+	margin-left: 10px;
+
+}
+/*the rest of shoping card adjustment */
+
+.shopping-card-btn{
+	padding: 9px;
+	display: flex;
+	justify-content: start;
+	background-color: #f5f5f5;
+	border-radius: 10px;
+	align-items: center;
+	cursor: pointer;
+}
+
+.order_count{
+	position: absolute;
+	right: -5px;
+	top: 8px;
+	padding: 3% 6%;
+	background-color: red;
+	border-radius: 50px;
+	color: white;
+	font-size: 12px;
+}
+
+.shopping-card-link{
+	font-size: 14px;
+	text-decoration: none;
+	color: #969696;
+	margin: 0px 10px;
+	font-family: yekan;
+}
+.shopping-card-img{
+	opacity: 0.5;
+	width: 25px;
+	height: 25px;
+	margin-right: 5px;
+}
+
+/* end of shopping list*/
+
+.user_a{
+	left: 50px;
+	width: 150px;
+	height: 100%;
+	position: relative;
+	margin-right: 50px;
+}
+
+	
+.profile{
+	float: right;
+	align-items: center;
+	margin-right: 48px;
+	margin-top: 22px;	
+}
+
+.link-drop-down{
+
+	position: relative;
+	width: fit-content;
+	height: fit-content;
+	right: 0;
+}
+.profile-img-container{
+
+	float: left;
+	display: block;
+	height: 30px;
+	width: 32px;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-color: #c2c2c2;
+	padding-right: 5px;
+}
+.profile-img{
+	opacity: 0.55;
+	width: 36px;
+	height: 36px;
+
+
+}
+
+.arrow-img{
+	opacity: 0.8;
+	margin-top:5.6px;
+	margin-left: 3px;	
+	width: 18px;
+	height: 18px;
+}
+
+/* starting dropdown */
+.drop-down{
+
+	width: 148px;
+	position: absolute;
+	border: 0.5px solid lightgray;
+	border-radius: 12px;
+	background-color: #fcfcfc;
+	display: flex;
+	top: 65px;
+	left: 20px;
+	opacity: 0;
+ 	pointer-events: none;
+  transform: translateY(-10px);
+  transition: all 0.4s ease;
+  box-shadow:0 8px 80px -22px rgba(0, 0, 0, 0.22);
+  padding: 5px;
+}
+
+.drop-down ul{
+	margin: 0px 2px 0px 5px;
+	width: 100%;
+	padding: 0px;
+	
+}
+
+.drop-down li{
+	width: 100%;
+	border-radius: 12px;
+	text-decoration: none;
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: right;
+	cursor: pointer;
+}
+
+.drop-down a{
+	text-decoration: none;
+	font-size: 16px;
+	padding: 11px;
+	color: gray;
+	font-family: yekan;
+	width: 100%;
+}
+
+.logout{
+	padding-left: 7px !important;
+}
+
+.li-account-settings {
+ 	padding-bottom: 0px !important;
+ }
+
+.account-settings{
+	padding-bottom: 15px;	
+	border-bottom: 1px solid #D3D3D3;
+}
+
+.logout-icon{
+	margin-left: 6px;
+	padding-right: 0px;
+	opacity: 0.6;
+	width: 20px;
+	height: 20px;
+	float: right;
+}
+
+.drop-down li:hover{
+	background-color: #f5f5f5;
+	pointer-events: all;
+}
+
+.profile:focus .drop-down{
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0px);
+}
+
+.profile:focus{
+	outline: none;
+}
+
+/* ending of user a and starting of user u */
+
+.user_u{
+	height: 100%;
+	width: 150px;
+	left: 30px;
+	display: flex;
+	align-items: center;	
+	justify-content: center;
+	position: relative;
+	margin-right: 50px;
+} 
+
+
+.login{
+	height: 37px;
+	width: 70px;
+	background: linear-gradient(45deg,#4AE491,#49AA75);
+	display: flex;
+	align-items: center;
+	border-radius: 5px;
+	float: left;
+	margin-left: 32px;
+}
+
+.login-link{
+	display: inline-block;
+	text-decoration: none;
+	margin: auto;
+	font-size: 18px;
+	font-family: yekan;
+	padding: auto;
+	color: white;
+}

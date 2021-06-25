@@ -1,0 +1,94 @@
+{% load static %} 
+{% load widget_tweaks %}
+<link href="{% static '/css/searchbar.css' %}" rel="stylesheet">
+<link href="{% static '/css/rtl_navbar.css' %}" rel="stylesheet">
+
+<header>
+<div class="navbar">
+  <!-- this is all about logo START -->  
+  <div class="logo">
+  	<a href="#"><img class="logo-img" src="{% static '/icons/logo.png' %}"></a>
+  	<div class="site-info">
+  		<h4 class="site-name">گالری نیکو</h4>
+  		<h5 class="site-des">خرید و دانلود عکس های باکیفیت</h5>
+  		</div>
+  </div>
+  <!-- this is all about logo END --> 
+  
+  <!-- this is all about search engine START -->
+<div class="searchbar">
+<div class="searchbar-container">
+    <button class="search-submit-btn" type="Submit">
+    <img class="search-submit-img" src="{% static '/icons/search.png' %}">
+    </button>
+    <div class="searchbar-input-container">
+      {% render_field  filtered_pics.form.tags class="search_input" placeholder="search for heigh resolution pictures"%}
+    </div>
+  </div>
+</div>
+  <!-- this is all about search engine END -->
+
+  <!-- this is all about top right corned buttons START --> 
+ <div class="shoping_card">
+    <div class="shopping-card-btn">
+      <a class= "shopping-card-link" href="shoppingCard">
+        سبد خرید
+      </a>
+      <img class="shopping-card-img" src="{% static '/icons/shop-card.png' %}">
+    </div>
+  </div>
+  {% if not request.user.is_authenticated %}
+  <div class="user_u">
+  	<div class="login">
+      <a class="login-link" href="authenticate/login">
+      ورود
+      </a>
+    </div>
+  </div>
+ {% endif %}
+ {% if request.user.is_authenticated %}
+	 <div class="user_a">
+	 	<div class="profile" tabindex="1">
+	 		<a class="link-drop-down">
+	 		<div class="profile-img-container">
+	 			<img class="profile-img" src="{% static '/icons/acount.png' %}">
+			</div>
+	 		<img class="arrow-img" src="{% static '/icons/arrow-down.png' %}">
+	 		</a>
+      <div class="drop-down">
+        <ul>
+          <li>
+            <a href="logout" class="drop-down-profile">حساب کاربری</a>
+          </li>
+          <li>
+            <a href="#" class="purchase-history">تاریخچه خرید</a>
+          </li>
+          <li class="li-account-settings">
+            <a href="#" class="account-settings">تنظیمات اکانت</a>
+          </li>
+          <li >
+            <img class="logout-icon" src="{% static '/icons/logout.png' %}">
+            <a href="authenticate/logout" class="logout">خروج</a>
+          </li>
+        </ul>
+      </div>
+  	</div>
+	</div>
+  {% endif %}
+  <!-- this is all about top right corned buttons END --> 
+  </div>
+</header>
+
+
+
+ <!-- this is for fixing the bug for transations in css
+<footer>
+  <script type="text/javascript"> </script>
+</footer>
+--> 
+
+
+
+
+
+ 

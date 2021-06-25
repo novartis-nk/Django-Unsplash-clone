@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nik | Photo gallery</title>
+	{% load static %} 
+	{% load widget_tweaks %}	
+	
+	<style>
+	  @font-face {
+		font-family: 'yekan';
+		src: url('{% static 'fonts/Yekan.eot' %}');
+		src: url('{% static 'fonts/Yekan.eot?#iefix' %}') format('embedded-opentype'),
+			 url('{% static 'fonts/Yekan.woff' %}') format('woff'),
+			 url('{% static 'fonts/Yekan.ttf' %}') format('truetype'),
+			 url('{% static 'fonts/Yekan.svg#BYekan' %}') format('svg');
+		font-weight: normal;
+		font-style: normal
+		}
+	</style>
+</head>
+<body>
+
+	<!-- Here we included the navbar html and css files --> 
+		{% include  "main/fa-navbar.html" with purchase_history=True order_count=order_count myFilter=myFilter main_view=True search=True shopping_card=True %}
+	<section >
+	<!-- This is the part that we include the cardview html and css files and passing zipped_data from the context --> 
+		{% include  "main/cardview.html" with zipped_data1=zipped_data1 zipped_data2=zipped_data2 zipped_data3=zipped_data3 %}
+		{% include  "main/page_changer.html" with page=page %} 
+	</section>
+	<footer>
+		{% include  "main/footer_fa.html" %}
+	</footer>
+
+</body>
+</html>

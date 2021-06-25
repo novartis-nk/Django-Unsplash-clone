@@ -1,0 +1,8 @@
+these following libraries should be installed on the server :
+  Django,
+  Pillow,
+  zeep,
+  SOAP "maybe",
+  Django_filters,
+  widget_tweaks,
+  mathfilters,

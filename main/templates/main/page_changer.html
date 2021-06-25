@@ -1,0 +1,40 @@
+{% load static %}    
+
+<link rel="stylesheet" type="text/css" href="{% static '/css/page_changer.css' %}">
+
+<div class="main_page_number_container">	
+	<div class="page_number_container">
+	{% if page.has_next %}
+	<a class = 'links' href="{% url 'index_page' %}?page={{page.next_page_number}}">
+		<div class="right_button main_button">
+			صفحه بعد
+			<img class = 'img' src="{%  static 'icons/next_page.png' %}">
+		</div>
+	</a>
+	{% else %}
+	<a class = 'links' href="">
+		<div class="right_button main_button off">
+			صفحه بعد
+			<img class = 'img' src="{%  static 'icons/next_page.png' %}">
+		</div>
+	</a>
+	{% endif %}
+	{% if page.has_previous %}
+	<a class = 'links' href="{% url 'index_page' %}?page={{page.previous_page_number}}">
+		<div class="left_button main_button">
+
+				<img class = 'img' src="{%  static 'icons/previous_page.png' %}">
+				صفحه قبل
+		</div>
+	</a>
+	{% else %}
+	<a class = 'links' href="">
+		<div class="left_button main_button off">
+
+				<img class = 'img' src="{%  static 'icons/previous_page.png' %}">
+				صفحه قبل
+		</div>
+	</a>
+	{% endif %}
+	</div>	
+</div>

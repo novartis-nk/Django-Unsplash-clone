@@ -1,0 +1,33 @@
+{% load static %}
+<head>
+  <link href="{% static '/css/login_page.css' %}" rel="stylesheet">
+</head>
+
+<div class="main_container">
+  <div class="logo_container">
+    <a href="/">
+    <img src="{% static '/icons/logo.png' %}">
+    </a>
+  </div> 
+  <div class="login_title">
+    <h3 class="h3_login_title">Login</h3>
+    <p class="p_welcome_message">We are so excited to have you back again :)</p>
+  </div>
+  <div class="login_form">
+    <form class="form login_form" action="" method="POST">
+    {% csrf_token %}
+    <input class="input username_input" type="text" name="username" placeholder="Enter Your Username">
+    <input class="input password_input" type="text" name="password" placeholder="Enter Your Password">
+    <input class="submit_btn" type="submit" name="Create User" value="Submit">
+    </form>
+    <div class="singup_link_container">
+      <p class="paragraph">You don't have an account yet? <a class="singup_link" href="/authenticate/register">Click here to Sing Up</a></p>
+    </div>
+
+  </div>
+</div>
+<footer>
+  <script type="text/javascript"> </script>
+    {% include  "main/footer_fa.html" %}
+</footer>
+

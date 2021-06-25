@@ -1,0 +1,30 @@
+{% load static %}
+<link href="{% static '/css/cardview.css' %}" rel="stylesheet">
+<div class="container">
+	{% for pic in pics %}
+		<div class="card">
+			<div class="image-part">
+				<img class="image" src={{pic.tumbnail.url}} alt="## Fill " >
+			</div>
+			<div class="status-bar">
+				<div class="left-status">	
+					<img src="{{pic.tumbnail.url}}">
+					<div class="links">
+						<a class ="photographer" href="## Fill" >{{pic.photographer}}</a>
+						<a class ="camera" href="## Fill" >{{pic.camera}}</a>	
+					</div>
+				</div>
+				<div class="right-status">
+						<a  class="add-link" href="## Fill" >
+								<div class="icon-container">
+									<img class ="shopping-card"src="{% static 'icons/add_shopping.png' %}">
+								</div>
+							</a>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+</div>
+<footer>
+	<script> </script>
+</footer>

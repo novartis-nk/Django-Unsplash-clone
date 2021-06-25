@@ -1,0 +1,81 @@
+.main_container{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	flex-direction: column;
+}
+
+.logo_container img{
+	width: 125px;
+	height: 125px;
+
+}
+
+.login_title{
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	font-family: sans-serif;
+	margin-bottom: 25px;
+}
+
+.h3_login_title {
+	margin: 10px;
+    font-size: 28px;
+    font-weight: bolder;
+}
+
+.p_welcome_message{
+	opacity: 0.4;
+}
+
+.input {
+    display: block;
+    margin: 15px;
+    padding: 13px 200px 13px 0px;
+    border: none;
+    border-bottom: 0.1px solid lightgray;
+    outline: none;
+    transition: 1s ease;
+}
+.login_form{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin: 0px;
+}
+.submit_btn{
+	margin: 35px;
+	padding: 13px 170px;
+	background: linear-gradient(45deg,#4AE491,#49AA75);
+	border: none;
+	border-radius: 13px;
+	color: white;
+	font-size: 16px;
+}
+
+.paragraph {
+	font-size: 14px;
+    margin: 0px;
+    opacity: 0.8;
+    font-family: sans-serif;
+}
+
+.singup_link {
+    text-decoration: none;
+    color: green;
+}
+
+::placeholder{
+	opacity: 0.5;
+	color: black;
+	font-size: 14px;
+}
+
+.input:focus{
+    border-bottom: 0.1px solid #4AE491;
+}

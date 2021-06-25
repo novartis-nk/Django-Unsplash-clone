@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+{% load static %}
+{% load widget_tweaks %}
+
+<html>
+<head>
+<style>
+  @font-face {
+	font-family: 'yekan';
+	src: url('{% static 'fonts/Yekan.eot' %}');
+	src: url('{% static 'fonts/Yekan.eot?#iefix' %}') format('embedded-opentype'),
+		 url('{% static 'fonts/Yekan.woff' %}') format('woff'),
+		 url('{% static 'fonts/Yekan.ttf' %}') format('truetype'),
+		 url('{% static 'fonts/Yekan.svg#BYekan' %}') format('svg');
+	font-weight: normal;
+	font-style: normal
+	}
+</style>	
+	<link href="{% static '/css/purchase_history.css' %}" rel="stylesheet">
+	<link href="{% static '/css/profile_status.css' %}" rel="stylesheet">
+</head>
+<body>
+
+	{% include  "main/fa-navbar.html" with purchase_history=False search=False  shopping_card=False%}
+		<div class="other_main_container">
+			<div class="main_container">
+			<div class="upper_status">
+			<div class="status">
+				<div class="user_info">
+					<div class="user_icon_div">
+						<img class="user_icon" src="{% static '/icons/acount.png' %}">
+					</div>
+					<p class="user_title">اطلاعات اکانت :</p>
+					<div class="fname">
+						<p class="label">نام : {{user.first_name}}	</p>
+					</div>
+					<div class="lname">
+						<p class="label">نام خانوادگی : {{user.last_name}}</p>	
+					</div>
+					<div class="email">
+						<p class="label">پست الکترونیکی : {{user.email}}	</p>
+					</div>
+					<div class="email">
+						<p class="label">تعداد سفارش خرید : {{count}}	</p>
+					</div>
+
+						</div>
+					</div>
+			<div class="items">
+					<p class="purchase_history">سبد خرید :</p>
+					{% for order in orders %}
+					<div class="history_item_container">
+						<div class="text_container">
+							<div class="right_info">
+						<p class="image_name">کد عکس : {{order.pic.pic_id}}</p>
+						<p class="image_price">قیمت  : {{order.pic.price_view}}</p>
+							</div>
+							<div class="left_info">
+						<p class="description">رزولوشن ها : {{order.pic.des_sizes}}</p>
+							</div>
+					</div>
+					<div class="icon_container">
+						<a href="{% url 'preview' order.pic.id %}">
+						<img class="pic_icon" src="{{order.pic.thumbnail.url}}">
+							</a>
+							<a href="{% url 'delete_order' order.id %}">
+						<img class="clear_icon" src="{% static '/icons/clear.png' %}">
+							</a>
+						</div>
+					</div>
+
+
+					{% endfor %}
+					{% if count == 0 %}
+						<div class="history_item_container_empty">
+							<p class="puchase_history">سبد خرید شما خالی است :(</p>
+						</div>	
+					{% endif %}
+				</div>
+				</div>
+
+				<div class="final_btn">
+							<div class="price">
+								<p> قیمت نهایی : {{final_price}}</p>
+							</div>
+							{% if count == 0 %}
+								<div class="btn_empty">
+											<p>تکمیل پرداخت</p>
+										</div>
+							{% else %}
+								<div class="btn">
+											<p>تکمیل پرداخت</p>
+										</div>
+							{% endif %}
+						</div>	
+					</div>
+			</div>
+
+<footer>
+			{% include  "main/footer_fa.html" %}
+</footer>
+</body>
+</html>
+
+

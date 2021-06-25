@@ -1,0 +1,19 @@
+{% load static %}
+{% load widget_tweaks %}
+<header>
+	<link href="{% static '/css/searchbar.css' %}" rel="stylesheet">
+</header>
+<header>
+<div class="searchbar-container">
+<form >
+	<button class="search-submit-btn" type="Submit">
+		<img class="search-submit-img" src="{% static '/icons/search.png' %}">
+	</button>
+	<div class="searchbar-input-container">
+		{% render_field  myFilter.form.tags class="search_input" placeholder="search for heigh resolution pictures"%}
+	</div>
+</form>
+	
+
+</div>
+</header>

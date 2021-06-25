@@ -1,0 +1,108 @@
+.main_container {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+.main_title_container{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    width: 100%;
+}
+
+h3 {
+    font-size: 32px;
+    margin-top: 0px;
+    font-weight: bold;
+    color: #50bf83;
+    letter-spacing: 1px;
+}
+
+
+
+.form_container {
+    padding: 20px 100px 0px 100px;
+    border-radius: 15px;
+
+}
+.titles {
+    font-size: 16px;
+    margin: 32px 0px 20px 0px;
+    font-weight: 500;
+}
+
+.help_text {
+    font-size: 12px;
+    margin-left: 17px;
+    opacity: 0.7;
+}
+
+.help_text ul{
+    font-size: 12px;
+    margin-left: 17px;
+    opacity: 0.6;
+}
+
+.input {
+    width: 100%;
+    display: block;
+    margin: 15px;
+    padding: 3px 200px 13px 5px;
+    border: none;
+    border-bottom: 0.1px solid lightgray;
+    outline: none;
+    transition: 1s ease;
+}
+
+ul {
+    padding: 0px;
+    margin-left: 17px;
+    opacity: 0.6;
+    font-size: 12px;
+    list-style: none;
+}
+
+ul li{
+    padding: 2px;
+
+}
+
+::placeholder{
+    opacity: 0.5;
+    color: black;
+    font-size: 14px;
+}
+
+.submit_btn{
+    margin: 35px;
+    padding: 13px 170px;
+    background: linear-gradient(45deg,#4AE491,#49AA75);
+    border: none;
+    border-radius: 13px;
+    color: white;
+    font-size: 16px;
+}
+
+.paragraph {
+    font-size: 14px;
+    margin: 0px;
+    opacity: 0.8;
+    font-family: sans-serif;
+}
+
+.singup_link {
+    text-decoration: none;
+    color: green;
+}
+
+
+.input:focus{
+    border-bottom: 0.1px solid #4AE491;
+}

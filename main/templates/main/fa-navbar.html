@@ -1,0 +1,105 @@
+{% load static %} 
+{% load widget_tweaks %}
+<link href="{% static '/css/searchbar.css' %}" rel="stylesheet">
+<link href="{% static '/css/rtl_navbar.css' %}" rel="stylesheet">
+
+<header>
+<div class="navbar">
+  <!-- this is all about logo START -->  
+  <div class="logo">
+  	<a href="{% url 'index_page'  %}"><img class="logo-img" src="{% static '/icons/logo.png' %}"></a>
+  	<div class="site-info">
+  		<h4 class="site-name">گالری نیکو</h4>
+  		<h5 class="site-des">خرید و دانلود عکس های باکیفیت</h5>
+  		</div>
+  </div>
+  <!-- this is all about logo END --> 
+  
+  <!-- this is all about search engine START -->
+{% if search %}
+<div class="searchbar">
+<div class="searchbar-container">
+    <button class="search-submit-btn" type="Submit">
+    <img class="search-submit-img" src="{% static '/icons/search.png' %}">
+    </button>
+    <div class="searchbar-input-container">
+      <form >
+      {% csrf_token %} 
+      {% render_field  myFilter.form.tags class="search_input" placeholder="جستجو در میان عکس ها ...  "%}
+      </form>
+    </div>
+  </div>
+</div>
+{% endif %}
+  <!-- this is all about search engine END -->
+
+  <!-- this is all about top right corned buttons START --> 
+  <div class="left_side_nav">
+  {% if shopping_card %}
+      <div class="shoping_card">
+        <a href="{% url 'shopping_card' %}">
+      <div class="shopping-card-btn">
+   {% if request.user.is_authenticated %}
+    {% if main_view%}
+        <div class="order_count">
+        {{ order_count}}
+        </div>
+        {% endif %}
+       {% endif %}
+        <img class="shopping-card-img" src="{% static '/icons/shop-card.png' %}">
+      </div>
+      </a>
+    </div>
+    {% endif %}
+    {% if not request.user.is_authenticated %}
+    <div class="user_u">
+    	<div class="login">
+        <a class="login-link" href="authenticate/login">
+        ورود
+        </a>
+      </div>
+    </div>
+   {% endif %}
+   {% if request.user.is_authenticated %}
+  	 <div class="user_a">
+  	 	<div class="profile" tabindex="1">
+  	 		<a class="link-drop-down">
+  	 		<div class="profile-img-container">
+  	 			<img class="profile-img" src="{% static '/icons/acount.png' %}">
+  			</div>
+  	 		<img class="arrow-img" src="{% static '/icons/arrow-down.png' %}">
+  	 		</a>
+        <div class="drop-down">
+          <ul>
+            {% if purchase_history == True %}
+            <li>
+              <a href="{% url 'shopping_card' %}" class="purchase-history">تاریخچه خرید</a>
+            </li>
+            {% endif %}
+            <li class="logout_list" >
+              <img class="logout-icon" src="{% static '/icons/logout.png' %}">
+              <a href="{% url 'logout' %}" class="logout">خروج</a>
+            </li>
+          </ul>
+        </div>
+    	</div>
+  	</div>
+</div>
+  {% endif %}
+  <!-- this is all about top right corned buttons END --> 
+  </div>
+</header>
+
+
+
+ <!-- this is for fixing the bug for transations in css
+<footer>
+  <script type="text/javascript"> </script>
+</footer>
+--> 
+
+
+
+
+
+ 

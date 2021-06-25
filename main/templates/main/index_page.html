@@ -1,0 +1,49 @@
+<div class="navbar">
+  <span class="logo"><a href="#">Logo</a></span>
+  <span class="shoping_card"><a href="#">shoping card</a></span>
+  <span class="search_box">
+    {{picFilter.form}}
+    <button class="submit_search"type="button" value="submit" name="Submit">Submit</button>
+  </span>
+  {% if request.user.is_authenticated is False %}
+  <span class="user_u">
+    <a href="#">
+    Login
+    </a>
+  </span>
+  {% endif %}
+  {% if request.user.is_authenticated %}
+  <span class="user_a">
+    <h4>Hey {{request.user.first_name}}</h4>
+    <span class="logout">
+      <a href="#">Logout</a>
+    </span>
+  </span>
+  {% endif %}
+</div>
+
+<footer>
+  <div class="footer_container">
+    <div class="left_side_footer">
+      <ul>
+          <li class="footer_title">1</li>
+          <li class="footer_title">2</li>
+          <li class="footer_title">3</li>
+      </ul>
+    </div> 
+    <div class="middle_side_footer">
+       <ul>
+          <li class="footer_title">1</li>
+          <li class="footer_title">2</li>
+          <li class="footer_title">3</li>
+      </ul>
+    </div>
+    <div class="right_side_footer">
+       <ul>
+          <li class="footer_title">1</li>
+          <li class="footer_title">2</li>
+          <li class="footer_title">3</li>
+      </ul>
+    </div>
+  </div>
+</footer>

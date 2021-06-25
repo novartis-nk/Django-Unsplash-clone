@@ -1,0 +1,147 @@
+body{
+	margin: 0;
+	padding: 0;
+	align-items: center;
+	font-family: sans-serif;
+	width : 100%;
+	height: 100vh;
+	background-color: #eee;
+}
+
+.the_main_container{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+}
+
+.container{
+	width: 100%;
+	height: 100%;
+	max-width: 1296px;
+	margin: auto;
+	padding: 0 1.5rem;
+	display: grid;
+	grid-template-columns: repeat(3, 416px);
+	grid-template-rows: auto;
+	align-items:start;
+	grid-gap: 1.5rem;
+}
+
+.card{
+	max-width: 416px;
+	max-height: fit-content;
+	}
+
+ .image-part{
+ 	opacity: 1;
+ 	transition: .5s ease;
+ 	backface-visibility: hidden;
+ 	max-width: fit-content;
+ 	height: auto;
+ 	overflow: hidden;
+ 	align-items: center;	
+	background-position: center;
+	background-repeat: no-repeat;
+	object-fit: scale-down;
+ }
+ 
+.status-bar{
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	max-width: 416px;
+	max-height: 80px;
+	transition: .5s ease;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	overflow: hidden;
+	top: -65px;
+	z-index: -1;
+}
+
+.left-status{
+	width: fit-content;
+	height: fit-content;
+	max-height: fit-content;
+	max-width: fit-content;
+	float: left;	
+	height: fit-content;
+	display: flex;
+	justify-content: flex-start;
+
+}
+
+.left-status img{
+	float: left;
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	background-repeat: no-repeat;
+	object-fit: cover;
+	border-radius: 50%;
+	margin-left: 15px;
+}
+
+.links{
+	margin: auto;
+	float: right;
+	text-decoration: none;
+	margin-left: 6px;
+}
+
+.links a{
+	text-decoration: none;
+	color: #D3D3D3;
+}
+
+.photographer{
+	letter-spacing: 0.5px;
+	font-size: 12px;
+}
+
+.camera{
+	font-size: 10px;
+	display: block;
+}
+
+.right-status{
+	float: right;
+	text-decoration: none;
+	justify-content: center;
+}
+
+.icon-container{
+	opacity: 0.4;
+	transition: .5s ease;
+	margin-right: 20px;
+	margin-top: 5px;
+	background-color:#FFFAFA;
+	border-radius:20%;
+	display: flex;
+	align-items: center;
+
+}
+.shopping-card{
+	width: 25px;
+	height: 25px;
+	padding: 7px; 
+}
+
+
+.card:hover .image-part {
+  opacity: 0.8;
+}
+
+.right-status:hover .icon-container{
+  opacity: 0.9;
+}
+
+.card:hover .status-bar {
+	z-index: 3;
+  opacity: 1;
+}

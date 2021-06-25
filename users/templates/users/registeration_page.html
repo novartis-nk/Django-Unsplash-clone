@@ -1,0 +1,59 @@
+{% load static %}
+{% load widget_tweaks %}
+<head>
+  <link href="{% static '/css/registration.css' %}" rel="stylesheet">
+</head>
+
+<div class="main_container">
+  <div class="form_container">
+    <div class="main_title_container">
+      <h3>Sing In</h3>
+    </div>
+    <form class="" action="" method="POST">
+      {% csrf_token %}
+      <div class="fields_container">
+        <p class="titles">
+        {% render_field  form.username.label %}
+        </p>
+          {% render_field  form.username class="input" placeholder="Enter a username"%}
+            <p class="help_text">
+            {% render_field  form.username.help_text  %}
+            </p>
+        <p class="titles">     
+        {% render_field  form.first_name.label %}
+        </p>
+          {% render_field  form.first_name class="input" placeholder="Enter your first name"%}
+        <p class="titles">
+        {% render_field  form.last_name.label %}
+        </p>
+          {% render_field  form.last_name class="input" placeholder="Enter your last name"%}
+        <p class="titles">
+        {% render_field  form.email.label %}
+        </p>
+          {% render_field  form.email class="input" placeholder="Your Email@example.com"%}
+        <p class="titles">
+        {% render_field  form.password1.label %}
+        </p>
+          {% render_field  form.password1 class="input" placeholder="Enter your password"%}
+            <p class="help_text">
+            {% render_field  form.password1.help_text %}
+            </p>
+        <p class="titles">
+        {% render_field  form.password2.label %}
+        </p>
+          {% render_field  form.password2 class="input" placeholder="Re-enter your password"%}
+            <p class="help_text">
+            {% render_field  form.password2.help_text %}
+            </p>
+      </div>
+      <input class="submit_btn" type="submit" name="Create User" value="Create">
+    </form>
+  </div>
+  <div class="singup_link_container">
+      <p class="paragraph">Already have an account? <a class="singup_link" href="/authenticate/login">Login</a></p>
+    </div>
+</div>  
+<footer>
+  <script type="text/javascript"> </script>
+    {% include  "main/footer_fa.html" %}
+</footer>

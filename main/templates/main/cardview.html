@@ -1,0 +1,117 @@
+{% load static %}
+{% load mathfilters %}
+<link href="{% static '/css/fa-cardview.css' %}" rel="stylesheet">
+
+<div class="main-container">
+		 
+	<div class="row-container">
+{% for pic,counter in zipped_data1  %}
+{% if counter|mod:3 == 0 %}	
+		<div class="card-container">
+			<div class="image-container">
+				<img class = preview-image src="{{pic.thumbnail.url}}">
+			</div>
+			<a href="{% url 'preview' pic.id %}">
+				<div class="link_preview">
+				</div>	
+			</a>
+			<div class="status-container">
+				<div class="left-status">
+					<img class="thumbnail" src="{{pic.thumbnail.url}}">
+					<div class="links">
+						<a class ="photographer" href="## Fill" >{{pic.photographer}}</a>
+						<a class ="camera" href="## Fill" >{{pic.camera}}</a>	
+					</div>
+				</div>
+				<div class="right-status">
+					<a  class="price-add-link" href="{% url 'index_page' pic.pic_id %}" >
+					<div class="icon-container">
+						<img class ="shopping-card"src="{% static 'icons/add_shopping.png' %}">
+						<p class="price">{{pic.price_view}}</p>
+					</div>
+					</a>
+				</div>	
+			</div>
+		</div>
+{% endif %}
+{% endfor %}
+	</div>
+		
+		
+	<div class="row-container">
+{% for pic,counter in zipped_data2 %}
+{% if counter|mod:3 == 1 %}
+		<div class="card-container">
+			<div class="image-container">
+				<img class = preview-image src="{{pic.thumbnail.url}}">
+			</div>	
+			<a href="{% url 'preview' pic.id %}">
+				<div class="link_preview">
+				</div>	
+			</a>
+			<div class="status-container">
+				<div class="left-status">
+					<img class="thumbnail" src="{{pic.thumbnail.url}}">
+					<div class="links">
+						<a class ="photographer" href="## Fill" >{{pic.photographer}}</a>
+						<a class ="camera" href="## Fill" >{{pic.camera}}</a>	
+					</div>
+				</div>
+				<div class="right-status">
+					<form action="{% url 'index_page' pic%}" method="POST">
+					{% csrf_token %}
+					<a  class="price-add-link" href="{% url 'index_page' pic.pic_id %}" >
+					<div class="icon-container">
+						<img class ="shopping-card"src="{% static 'icons/add_shopping.png' %}">
+						<p class="price">{{pic.price_view}}</p>
+					</div>
+					</a>
+					</form>
+				</div>	
+			</div>
+		</div>
+{% endif %}
+{% endfor %}
+	</div>
+		
+		
+	<div class="row-container">
+{% for pic,counter in zipped_data3 %}
+{% if counter|mod:3 == 2 %}
+		<div class="card-container">
+			<div class="image-container">
+				<img class = preview-image src="{{pic.thumbnail.url}}">
+			</div>	
+			<a href="{% url 'preview' pic.id %}">
+				<div class="link_preview">
+				</div>	
+			</a>
+			<div class="status-container">
+
+				<div class="left-status">
+					<img class="thumbnail" src="{{pic.thumbnail.url}}">
+					<div class="links">
+						<a class ="photographer" href="## Fill" >{{pic.photographer}}</a>
+						<a class ="camera" href="## Fill" >{{pic.camera}}</a>	
+					</div>
+				</div>
+				<div class="right-status">
+					<a  class="price-add-link" href="{% url 'index_page' pic.pic_id %}" >
+					<div class="icon-container">
+						<img class ="shopping-card"src="{% static 'icons/add_shopping.png' %}">
+						<p class="price">{{pic.price_view}}</p>
+					</div>
+					</a>
+				</div>	
+			</div>
+		</div>
+{% endif %}
+{% endfor %}
+	</div>
+		
+
+
+
+
+	
+</div>
